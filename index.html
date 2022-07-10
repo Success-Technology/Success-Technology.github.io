@@ -1,82 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dart List</title>
+    <title>App Life Cycle</title>
+    <link rel="stylesheet" href="css/index.css">
+
     <style>
-        body {
-            padding: 0px;
-            margin: 0px;
-            font-family: sans-serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .body_text_row {
-            margin: auto;
-            padding: 10px;
-            width: 80%;
-            height: 100%;
-            background-color: #d1d1d1;
-        }
-        
-        @media screen and (max-width:400px) {
-            .body_text_row {
+        @media only screen and (max-width: 600px) {
+            .middle_content_block {
                 width: 100%;
-                margin: 0px;
+                padding: auto;
+            }
+            .content_block_wrapper {
+                width: 95%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="body_text_row">
-        <h1>Dart List</h1>
-        <hr>
-        <h4>What is List ?</h4>
-        <p>
-            Data ကနေပြောပါမယ်။ Programming ဆိုတာ data တွေနဲ့ computing logic လုပ်ရတာဖြစ်တဲ့တွက် data တေွလိုတာပေါ နော်။ Data တွေကိုအမျိုးအစားခွဲခြားလိုက်ရင် integer ,float , double , string စသဖြင့် data types လေးတွေရလာတယ် ။ ဥပမာ - integer ဆိုရင် ဂဏာန်းလေးတွေပေါ့ ၊
-            string ဆိုရင် နေ့စဥ်အသုံးပြုနေ တဲ့စာသားတွေ text တွေပေါ့။ အဲဒီ data တွေကို memory မှာ Save လိုက်မယ် ပြီးတော့ပြန်ခေါ် သုံးမယ်ဆိုရင် နာမည် တစ်ခုတော့‌ သေချာပေါက်လိုမှာပေါ့နော် ။ လူတစ်ယောက် အသားဖြူဖြူ အရပ်ရှည်ရှည်နဲ့ ကိုယ်နဲ့ တစ်တန်းတည်းထိုင်တဲ့
-            ကောင်လေး ကို အိမ်ရောက်တော့ မိသားစုကို သူအကြောင်းပြောချင်ရင် အမေရေ "လူတစ်ယောက် အသားဖြူဖြူ အရပ်ရှည်ရှည်နဲ့ ကိုယ်နဲ့ တစ်တန်းတည်းထိုင်တဲ့ ကောင်လေး" လို့ နာမည်လေး မသတ်မှတ်ပဲသုံးရင် ပြောရတာခရီးမတွင်တော့မှာ သေချာပါတယ်။ ဒါကြောင့်သူ့ကို "မောင်ဖြိုးဖြူ"
-            လို့ နာမည်လေး ပေးလိုက်တယ်။ အဲဒါဆို သူအကြောင်းပြောလို့လွယ်ကူသွားပြီ ။ အဲဒီလိုပဲ save ထားတဲ့ data လေးတွေကို လဲ မ save ခင်ကတည်း နာမည်လေးတစ်ခုသတ်မှတ်လိုက်ရင် ကိုယ်လိုအပ်လို့ပြန်သုံးချင်တဲ့အခါ လွယ်ကူသွားမယ်။ အဲဒီ နာမည် လေးကို variable name လို့ခေါ်တယ်
-            ။ သူက data ကို ညွန်းပြပေးတဲ့ ကိုယ်စားပြု နာမည်လေးတစ်ခုပေါ့လေ။
-        </p>
 
-        <p>
-            Variable တွေက data pointer ( Point = ညွန်းဆိုသည်) လို့သိပြီးသွားပြီဆိုရင် ‌int a = 10 ; မှာ a သည် 10 ရှိတဲ့ memory address လေးကိုသူက သိမ်းပေးထားပါတယ်။ ဥပမာ - မောင်ဖြိုးဖြူရဲ့ နေရပ်လိပ်စာ လေးပေါ့ သူကိုတော့ code တေွထဲ မှာမ မြင်ရပါဘူး မြုပ်ထားတာပေါ့နော်။
-            သို့သော် programmer က '‌a' ကိုသုံးလိုက်တာနဲ့ code တွေက လိပ်စာရှာပြီး a ရဲ့ လိပ်စာအတိုင်း save ထားတဲ့ 10 ဆိုတဲ့ value လေးကို ကိုယ်ဆီပြန်ယူလာပြီး တွက်ချက်ပေးမှာပေါ့နော် ။
-        </p>
+    <div class="middle_content_block">
+        <h2>Application Creating Life Cycle</h2>
+        <div class="smart_divider"></div>
+        <br>
 
-        <p>
-            ကဲ.. Variable အကြောင်းသိပြီ ဆိုရင် နောက်တဆင့်သွားကြရအောင်။ အကယ်၍ တခါတလေ a , b , c , d , e , f , g ,etc., အစ သဖြင့် integer data type လေး တွေအများကြီးကို တွက်ချက်လို့လိုလာပြီ ။ သူတို့ ကို a = 10 , b = 11 , c = 20 , d = 22 , စ သဖြင့် သတ်မှတ် နေရင် အချိန်တေွကုန်တာပေါ့
-            ပြီးတော့ code memory တွေလဲပိုတက်လာ မှာပေါ့နော်။ အဲဒီလို multiple values တွေကို တစ်စုတည်းစုပြီး data type ‌လေးတစ်ခုဖန်တီးလိုက်ကြတယ် ။ သူက တော့ data structure type ( data collection) လေးပါ ။ Data Structure ဆိုတာ သူကိုယ်က Type တစ်ခုပဲ သို့သော်
-            သူက value တွေကို အစီအစဥ်နဲ့ အတန်းလိုက်အများကြီး save နိုင်တယ် ပြန်ထုတ်သုံးရင်လဲ အတန်းလိုက် ပြန်ထုတ်သုံးနိုင်တဲ့တွက် လျင်မြန်လွယ်ကူတာပေါ့။ သူကို array data type လို့ခေါ် တယ်။
-        </p>
+        <!-- State For Project Creating -->
+        <div class="content_title">Stages for creating a application project</div>
+        <div class="content_block_wrapper">
+            <div class="content_image">
+                <img src="statics/app_block.jpg" alt="Block App">
+            </div>
+            <div class="content_block">
 
-        <p>
-            Programming Languages ( C,C++, Java ,Python,etc) တေွသူတို့ကိုယ်ပိုင် နာမည်တွေမှည့်ပြီး array ကို အမျိုးမျိုးခေါ် ‌ ‌ေ၀ါ် ကြပါတယ်။ Python မှာဆို array ကို List လို့ ခေါ် သလို Java မှာလဲ Array လို့ခေါ် ကြတယ် ။ သို့သော် အလုပ်လုပ်ပုံက တော့ အတူတူပဲ ဖြစ်ပါတယ်။
-            ဥပမာ - List data = [ 1 , 4 , 5 , 6 , 7 , 8 ] ; သူတို့ကို ပြန်ထုတ်သုံးမယ်ဆိုရင် index လေးတေွနဲ့ ပြန်ထုတ်သုံးကြတယ် data[0] = 1 , data[1] = 4 , data[2] = 5 ။ List တစ်ခုမှာ Indexing ဆိုတာက ပါ၀င်တဲ့ data member လေးတွေကို အမှတ်စဥ်သတ်မှတ်ပေးတာပေါ့
-            ပြန်ယူသုံးဖို့နဲ့ သိမ်းဆည်းဖို့ပေါ့နော်။ data collection ( data structure ) တေွအားလုံးရဲ့ အမှတ်စဥ်က အမြဲ index = 0 ( Start Point ) ကနေစကြပါတယ်။
-        </p>
+                <p>
+                    Developing an application is look like constructing a <strong>block-structured</strong> lego toy. We can handle the most features of application well with block extensible patterns.
 
-        <p>
+                    <br><br> The first important thing is
+                    <span class="vip_text">
+                        <cite>to write block extensible each other</cite>
+                    </span>.
 
-            Data Structure တွေမှာ တခါတလေ ကိုယ်က number type တစ်ခုပဲသီးသန့် save ချင်ရှိသလို , တခါတလေလဲ number ရော text ( string type ) ရော ပေါင်း save ချင်တာရှိကြပါတယ် ။ အမှန်ဆို data structure တစ်ခုက number data structure ဆိုရင် number ပဲ save လို့ရပါတယ် သို့သော်
-            နောက်ပိုင်းကျတော့ စာသားတွေပါတစ်ခါတည်း ရော save ချင်တဲ့ အခါတွေ ရှိလာ တော့ data type အသစ်ကို ဖန်တီးလိုက်ကြတယ် ၊ သူက dynamic data type လို့ခေါ် တယ်။ dynamic data type ဆို number လဲဖြစ်နိုင်တယ် ၊ စာသား (string) လဲဖြစ်နိုင်တယ် ၊ ဒဿမကိန်းလဲ ဖြစ်နိုင်တယ်
-            အဲတော့ Array ရဲ့ type လေးကို ကိုယ်က dynamic type လို့ပေး ထားရင် ဘာ data type ပဲ ဖြစ်ဖြစ်အဆင်ပြေ သွားတာပေါ့။ Array တစ်ခုရဲ့ type ကိုကြေငြာချင်ရင်
-            <code>List
-                data = [ 'text' , 1 , 19.39 ] </code> ဆိုပြီး မြားလေး နှစ်ခုကြားမှာ Type ကို ကြေငြာပေးရပါတယ် ။
-        </p>
+                    <br><br> The second important thing is <span class="vip_text">
+                        <cite>to have a good clean architecture</cite>
+                    </span> in which all block features can well connect each other indepentently.
+                </p>
+            </div>
+        </div>
+
+        <!-- How to learn programming -->
+        <div class="content_title">How to progress programming skills</div>
+        <div class="content_block_wrapper">
+            <div class="content_block">
+                <p>
+                    Learning Programming is easy. To enhance your skill rapidly,just follow these steps. <br>
+                    <ol>
+                        <li>Learn Basic Concepts and all tutorials contributed by your source.</li> <br>
+                        <li>Memorize them</li> <br>
+                        <li>Go to
+                            <a href="https://github.com" class="smart_link" target="_blank">Github</a> , find your appropriate code repositary to clone your skill and proficiency.Download and clone what you like.
+                        </li><br>
+                        <li>Challenge yourself with higher projects</li> <br>
+                        <li>Deploy it to public.</li> <br>
+                    </ol>
+                    <div class="smart_tip" id="fuck">
+                        <b>Tip :</b> Never Leave A Programming without anchoring a project ! Project are our miletone to get your confidence of this subject.
+                    </div>
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+
 
 
     </div>
 
 
+
 </body>
 
-</html>
+</i
